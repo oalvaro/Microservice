@@ -1,4 +1,4 @@
-CREATE KEYSPACE financial_poc;
+CREATE KEYSPACE financial_poc WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
 
 use financial_poc;
 
@@ -18,8 +18,3 @@ CREATE INDEX financialtransaction_transactiontype_idx ON financialtransaction (t
 
 
 
-@Document in entity for mongoDB
-@Table in entity for cassandra
-
-
-CREATE KEYSPACE financial_poc WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
